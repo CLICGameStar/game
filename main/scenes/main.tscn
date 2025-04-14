@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctmcow4857j71"]
+
+[ext_resource type="Script" uid="uid://l00g52h7qewu" path="res://main/scripts/main.gd" id="1_8085f"]
+[ext_resource type="Texture2D" uid="uid://bmee6b5ccksmq" path="res://icon.svg" id="2_ly4ot"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8085f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.5
+offset_top = 77.0
+offset_right = 194.5
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Game* Game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_top = 273.0
+offset_right = 1152.0
+offset_bottom = 442.0
+theme_override_constants/separation = 128
+alignment = 1
+
+[node name="Game1" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Panel/HBoxContainer/Game1"]
+layout_mode = 2
+texture_normal = ExtResource("2_ly4ot")
+texture_pressed = ExtResource("2_ly4ot")
+texture_hover = ExtResource("2_ly4ot")
+texture_disabled = ExtResource("2_ly4ot")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Game1"]
+layout_mode = 2
+text = "Bullet hell"
+horizontal_alignment = 1
+
+[node name="Game2" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Panel/HBoxContainer/Game2"]
+layout_mode = 2
+texture_normal = ExtResource("2_ly4ot")
+texture_pressed = ExtResource("2_ly4ot")
+texture_hover = ExtResource("2_ly4ot")
+texture_disabled = ExtResource("2_ly4ot")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer/Game2"]
+layout_mode = 2
+text = "Puzzle Game"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Game1/TextureButton" to="." method="_on_bullet_hell_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Game2/TextureButton" to="." method="on_puzzle_game_pressed"]
