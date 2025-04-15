@@ -1,9 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhqmw861umgec"]
+[gd_scene load_steps=5 format=3 uid="uid://bhqmw861umgec"]
 
 [ext_resource type="PackedScene" uid="uid://7yman1hb02ho" path="res://puzzle/scenes/player.tscn" id="1_gggjq"]
-[ext_resource type="Script" uid="uid://vpu7bq6ikfuu" path="res://puzzle/scenes/puzzle.gd" id="1_jdp1f"]
+[ext_resource type="Script" uid="uid://vpu7bq6ikfuu" path="res://puzzle/scripts/puzzle.gd" id="1_jdp1f"]
+[ext_resource type="Texture2D" uid="uid://bflxhva8cs8nh" path="res://puzzle/assets/background_gray.png" id="2_5spbe"]
+[ext_resource type="Texture2D" uid="uid://cr6f20ckklnnu" path="res://puzzle/assets/key_yellow.png" id="4_5spbe"]
 
 [node name="Puzzle" type="Node2D"]
 script = ExtResource("1_jdp1f")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 323.5)
+scale = Vector2(1.151, 1.12914)
+texture = ExtResource("2_5spbe")
+
 [node name="Player" parent="." instance=ExtResource("1_gggjq")]
+
+[node name="Key" type="Sprite2D" parent="."]
+position = Vector2(567, 333)
+scale = Vector2(7.22, 7.22)
+texture = ExtResource("4_5spbe")
